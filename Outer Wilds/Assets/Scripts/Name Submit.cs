@@ -35,7 +35,7 @@ public class NameSubmit : MonoBehaviour
                 //Debug.Log(name1);
 
             }
-            else if (GameManager.Instance.gameState == 2)
+            else if (GameManager.Instance.gameState == 3)
             {
                 name2 = s;
                 //Debug.Log(name2);

@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
 
     public void DoSpawn()
     {
-        if (GameManager.Instance.gameState > 2)
+        if (GameManager.Instance.gameState > 4)
         {
             GameObject guess;
             int a = Random.Range(0, 2);

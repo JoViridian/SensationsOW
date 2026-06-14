@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class QuizObject : MonoBehaviour
 {
     public bool complex = false;
     public int id;
+    public UnityEvent onCorrect;
+    public UnityEvent onFail;
 
     void Update()
     {
@@ -21,10 +24,13 @@ public class QuizObject : MonoBehaviour
             if (GameManager.Instance.answer == id)
             {
                 GameManager.Instance.correctScore++;
+                GameManager.Instance.totalScore++;
+                onCorrect.Invoke();
             }
             else if (!GameManager.Instance.triggerState)
             {
-                SceneManager.LoadScene(1);
+                GameManager.Instance.totalScore++;
+                onFail.Invoke();
             }
 
             GameManager.Instance.answerState = true;

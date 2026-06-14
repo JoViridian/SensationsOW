@@ -17,11 +17,6 @@ public class Movement : MonoBehaviour
         {
             DoMove();
         }
-
-        if (Input.GetKey(KeyCode.E))
-        {
-            transform.Rotate(0, 1, 0);
-        }
     }
 
     void DoMove()

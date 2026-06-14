@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int answer;
     [HideInInspector] public bool answerState;
     [HideInInspector] public int correctScore;
+    [HideInInspector] public int totalScore;
 
     private void Start()
     {
@@ -39,23 +40,24 @@ public class GameManager : MonoBehaviour
         answer = 0;
         answerState = false;
         correctScore = 0;
+        totalScore = 0;
     }
 
     void Update()
     { 
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    Application.Quit();
+        //}
+
+        if (totalScore >= 20)
         {
-            Application.Quit();
+            SceneManager.LoadScene(3);
         }
 
-        if (correctScore >= 10)
-        {
-            SceneManager.LoadScene(2);
-        }
-
-        scoreBox.text = "" + correctScore;
-        //Debug.Log(gameState + "/" + triggerState); 
+        scoreBox.text = "" + correctScore + " / " + totalScore;
+        Debug.Log(gameState + "/" + triggerState); 
     }
 
     public void ProgressState()
@@ -72,7 +74,6 @@ public class GameManager : MonoBehaviour
     IEnumerator ReactivateDelay(GameObject GO)
     {
         yield return new WaitForSeconds(1f);
-        answerState = false;
         GO.SetActive(true);
     }
 

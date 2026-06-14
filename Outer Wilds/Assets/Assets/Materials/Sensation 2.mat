@@ -43,8 +43,8 @@ Material:
     - _Pulse_Speed: 0.6
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Slide_Speed: 0.8
-    - _Slide_Strength: 0.4
+    - _Slide_Speed: 1
+    - _Slide_Strength: 0.2
     m_Colors:
     - _Primary_Color: {r: 0, g: 1, b: 0.5, a: 1}
     - _Secondary_Color: {r: 1, g: 1, b: 0, a: 1}
